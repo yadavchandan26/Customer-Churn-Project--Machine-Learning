@@ -26,9 +26,17 @@ def preprocess(data):
 
     return data
 
-def split_data(data):
+def feature_selection(data):
     x=data.drop('Churn',axis=1)
     y=data['Churn']
 
+    return x,y 
+
+def final_loading(data_path):
+    data=load_data(data_path)
+    data=preprocess(data)
+    x,y=feature_selection(data)
+
     x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.3,random_state=42)
     return x_train,x_test,y_train,y_test
+    

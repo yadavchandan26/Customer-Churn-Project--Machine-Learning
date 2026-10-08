@@ -25,3 +25,10 @@ def preprocess(data):
     data['TotalCharges'] = data['TotalCharges'].fillna(0)
 
     return data
+
+def split_data(data):
+    x=data.drop('Churn',axis=1)
+    y=data['Churn']
+
+    x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.3,random_state=42)
+    return x_train,x_test,y_train,y_test

@@ -14,3 +14,5 @@ def main(data):
 
     final_submission(x_test,y_test,y_pred,output_path='submission.csv')
 
+if __name__=="__main__":
+    main()

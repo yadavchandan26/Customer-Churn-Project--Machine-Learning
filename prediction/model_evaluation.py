@@ -8,6 +8,6 @@ def final_submission(x_test,y_test,y_pred,output_path='submission.csv'):
     submission=pd.DataFrame({
         'Churn':y_pred
     })
-    submission.to_csv(index=True)
+    submission.to_csv(output_path,index=True)
     print(f"submission completed and saved to {output_path}")
     return submission

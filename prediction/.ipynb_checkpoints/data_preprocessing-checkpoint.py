@@ -27,10 +27,10 @@ def preprocess(data):
     return data
 
 def feature_selection(data):
-    x = data.drop(['Churn', 'customerID'], axis=1)
-    y = data['Churn'].astype(int)
-    return x, y
+    x=data.drop('Churn',axis=1)
+    y=data['Churn']
 
+    return x,y 
 
 def final_loading(data_path):
     data=load_data(data_path)
